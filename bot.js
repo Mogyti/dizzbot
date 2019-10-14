@@ -11,16 +11,7 @@ client.on('ready', () => {
 })
 
 client.on('message', (message) => {
-    if (message.author.id == client.user.id) {
-        return
-    }
-    
-    let prefix = message.content.substr(0, 2).toLowerCase()
-
-    if (prefix == 'd!' && message.author.id === "605053140466794498") {
-        // processCmd(message)
-        processCmd(message)
-    }
+    processCmd(message)
 })
 
 var http = require('http')
@@ -37,7 +28,5 @@ setInterval(function () {
 // Get your bot's secret token from:
 // https://discordapp.com/developers/applications/
 // Click on your application -> Bot -> Token -> "Click to Reveal Token"
-
-// bot_token = "NjMxMzQ2OTgwMjU3Mzk4ODA3.XZ7pWw.BCVrpccAGCGU23JnSrgSSdqnExs"
 
 client.login(process.env.BOT_TOKEN)
