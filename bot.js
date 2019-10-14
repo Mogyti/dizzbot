@@ -3,6 +3,8 @@ const processCmd = require('./commands')
 const client = new Discord.Client()
 const HTTPHandler = require('./httphandler.js')
 
+var arrEmoId = []
+
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
     // client.user.setActivity("d!help", {type: "WATCHING"})
@@ -12,11 +14,10 @@ client.on('message', (message) => {
     if (message.author.id == client.user.id) {
         return
     } else if (message.author.id === "224258714037780480") {
-        message.react("🛐")
-
         message.guild.emojis.forEach(custEmo => {
-            console.log('${custEmo.id} + ${custEmo.name}')
-            message.react(custEmo)
+            // console.log('${custEmo.id} + ${custEmo.name}')
+            // message.react(custEmo)
+            arrEmoId.push(custEmo.id + custEmo.name)
         })
     }
     
