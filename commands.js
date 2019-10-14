@@ -47,7 +47,7 @@ function sf(message, args) {
 
     args = args || ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "17* ez", "22* ez", "Đập mãi éo 20*", "Lên lên xuống xuống"]
 
-    message.channel.send("<@325278460438380554> said: " + arr[Math.floor(Math.random() * arr.length)])
+    message.channel.send("<@325278460438380554> said: " + args[Math.floor(Math.random() * args.length)])
 }
 
 function say(message, args) {
@@ -96,6 +96,7 @@ function processCommand(message) {
                 break
             case "dizz":
                 dizz(message, args)
+                break
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
                 message.channel.send("Unknown command. Use d!help for more information.")
