@@ -11,7 +11,7 @@ client.on('ready', () => {
 })
 
 client.on('message', (message) => {
-    if (message.author.id == client.user.id) {
+    if (message.author.id == client.user.id || message.author.id === "605053140466794498") {
         return
     } else {
         processCmd(message)

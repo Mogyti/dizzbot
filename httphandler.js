@@ -2,7 +2,7 @@ const http = require('http')
 
 function handleRequest(req, res) {
     res.write('<html>Hello</html>')
-    res.end
+    res.end()
 }
 
 module.exports = {

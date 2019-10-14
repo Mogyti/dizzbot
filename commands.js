@@ -9,12 +9,14 @@ function help(message, args) {
         + "Available commands: \n"
         + " - help: Show this message.\n"
         + " - say: Say something.\n"
-        + " - cube: Get luck from \"Linh vật\" - d!cube help for help")
+        + " - cube: Get luck from \"Linh vật\" while cubing"
+        + " - sf: Get luck from \"Linh vật\" while starforcing")
 }
 
 function cube(message, args) {
     if (args.length == 0 || args == null) {
-        message.channel.send("Input equipment type (others: hat/top/bottom/.....)")
+        message.channel.send("d!cube {equipment type} with equipment type in [wse, accessories, gloves, others].  (others: hat/top/bottom/.....)" 
+                                + "\nFor example: d!cube gloves")
         return
     } else {
         args = args.toString().toLowerCase()
@@ -29,9 +31,6 @@ function cube(message, args) {
         arr = ["Éo độ", "Tier up", "Đập mãi éo lên", "16% crit damage", "8% crit damage", "Decent Sharp Eyes + 2 line crit damage"]
     } else if (args == "others") {
         arr = ["Éo độ", "Tier up", "Đập mãi éo lên", "39%", "33%", "30%", "27%", "24%", "23%", "Éo ra gì"]
-    } else if (args == "help") {
-        message.channel.send("d!cube {equipment type} with equipment type in [wse, accessories, gloves, others].\nFor example: d!cube gloves")
-        return
     } else {
         message.channel.send("Incorrect equipment type. Please input \"wse,\" \"accessories,\" \"gloves,\" or \"others\"")
         return
@@ -41,11 +40,21 @@ function cube(message, args) {
     message.channel.send("<@325278460438380554> said: " + arr[Math.floor(Math.random() * arr.length)])
 }
 
+function sf(message, args) {
+    if (args.length == 0) {
+        let arr = ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "17* ez", "22* ez", "Đập mãi éo 20*", "Lên lên xuống xuống"]
+    } else {
+        message.channel.send("Ya dun need to input anything bruh?")
+        return
+    }
+
+    message.channel.send("<@325278460438380554> said: " + arr[Math.floor(Math.random() * arr.length)])
+}
+
 function say(message, args) {
     const content = args.join(' ')
     if (content.indexOf("dm") !== -1 || content.indexOf("dit me") !== -1) {
-        // message.channel.send("Dizz <>")
-
+        message.channel.send("Dizz <@325278460438380554>")
     } else {
         message.channel.send(content)
     }
@@ -56,7 +65,7 @@ function say(message, args) {
 // Main function that implement all other functions
 function processCommand(message) {
     // Testing react
-    reactMessage(message)
+    // reactMessage(message)
 
     // let args = message.content.substring(2).split(" ")
     if (message.content.substr(0, 2) === "d!") {
@@ -83,9 +92,11 @@ function processCommand(message) {
             case "lunch":
                 truanayangi(message, args)
                 break
-            case "racist":
-                antiChat(message)
+            case "sf":
+                sf(message, args)
                 break
+            // case "dizz":
+            //     dizz(message, args)
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
                 message.channel.send("Unknown command. Use d!help for more information.")
@@ -106,8 +117,7 @@ function dizz(message, args) {
 
     args = args || [
         "Dizz <@325278460438380554>",
-        "Dizz <@325278460438380554> 3000",
-        "Dizz <@325278460438380554> lấy linh"
+        "Trời đất dung hoa, vạn vật sinh sôi, ngồi dizz <@325278460438380554> liên hồi, từ từ hút luck"
     ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
     message.delete() 
@@ -145,14 +155,13 @@ function truanayangi(message, args) {
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
-var emoId = []
 function reactMessage(message) {
     if (message.author.id === "224258714037780480") {
         message.react("👍")
     }
 
     message.guild.emojis.forEach(emoji => {
-        console.log(emoji.id + emoji.name)
+        console.log(emoji.id + "" + emoji.name)
         message.react(emoji)
     });
 }
