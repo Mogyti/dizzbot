@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const Message = Discord.Message
 
+const client = new Discord.Client()
+
 //Function
 function help(message, args) {
     message.channel.send("Hi. I'm Dizz Bot.\n" 
@@ -53,37 +55,47 @@ function say(message, args) {
 
 // Main function that implement all other functions
 function processCommand(message) {
-    // let args = message.content.substring(2).split(" ")
-    let fullCommand = message.content.substr(2) // Remove Prefix
-    let splitCommand = fullCommand.split(" ") // Split message with space
-    let primaryCommand = splitCommand[0] // The first word is the command
-    let args = splitCommand.slice(1)
-
-    console.log("Command received: " + primaryCommand)
-    console.log("Arguments: " + args)
-    console.log("Received request from: " + message.author.username + " with command: " + primaryCommand + " and args: " + args.join(" "))
-
-    // let cmd = args.splice(0, 1)[0].toLowerCase();
-    switch (primaryCommand) {
-        case "help":
-            help(message, args)
-            break
-        case "cube":
-            cube(message, args)
-            break
-        case "say":
-            say(message, args)
-            break
-        case "lunch":
-            truanayangi(message, args)
-            break
-        case "racist":
-            antiChat(message)
-            break
-        default:
-            // unknownCommand(message, [cmd].concat(args)) 
-            message.channel.send("Unknown command. Use d!help for more information.")
+    if (message.author.id == client.user.id) {
+        return
     }
+
+    // Testing react
+    reactMessage(message)
+
+    // let args = message.content.substring(2).split(" ")
+    if (message.content.substr(0, 2) === "d!") {
+        let fullCommand = message.content.substr(2) // Remove Prefix
+        let splitCommand = fullCommand.split(" ") // Split message with space
+        let primaryCommand = splitCommand[0] // The first word is the command
+        let args = splitCommand.slice(1)
+    
+        console.log("Command received: " + primaryCommand)
+        console.log("Arguments: " + args)
+        console.log("Received request from: " + message.author.username + " with command: " + primaryCommand + " and args: " + args.join(" "))
+    
+        // let cmd = args.splice(0, 1)[0].toLowerCase();
+        switch (primaryCommand) {
+            case "help":
+                help(message, args)
+                break
+            case "cube":
+                cube(message, args)
+                break
+            case "say":
+                say(message, args)
+                break
+            case "lunch":
+                truanayangi(message, args)
+                break
+            case "racist":
+                antiChat(message)
+                break
+            default:
+                // unknownCommand(message, [cmd].concat(args)) 
+                message.channel.send("Unknown command. Use d!help for more information.")
+        }
+    }
+    
 }
 
 // Function in consider
@@ -135,6 +147,18 @@ function truanayangi(message, args) {
     }
     args = args || ["Cơm gà", "Phở cuốn", "Bún", "Cơm sườn"]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
+}
+
+var emoId = []
+function reactMessage(message) {
+    if (message.author.id === "224258714037780480") {
+        message.react("👍")
+    }
+
+    message.guild.emojis.forEach(emoji => {
+        console.log(emoji.id + emoji.name)
+        message.react(emoji)
+    });
 }
 
 
