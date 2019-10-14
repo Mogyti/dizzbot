@@ -11,7 +11,11 @@ client.on('ready', () => {
 })
 
 client.on('message', (message) => {
-    processCmd(message)
+    if (message.author.id == client.user.id) {
+        return
+    } else {
+        processCmd(message)
+    }
 })
 
 var http = require('http')

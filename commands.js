@@ -55,10 +55,6 @@ function say(message, args) {
 
 // Main function that implement all other functions
 function processCommand(message) {
-    if (message.author.id == client.user.id) {
-        return
-    }
-
     // Testing react
     reactMessage(message)
 
