@@ -13,19 +13,9 @@ client.on('ready', () => {
 client.on('message', (message) => {
     if (message.author.id == client.user.id) {
         return
-    } else if (message.author.id === "224258714037780480") {
-        message.guild.emojis.forEach(custEmo => {
-            // console.log('${custEmo.id} + ${custEmo.name}')
-            // message.react(custEmo)
-            arrEmoId.push(custEmo.id + custEmo.name)
-        })
     }
     
     let prefix = message.content.substr(0, 2).toLowerCase()
-
-    // if (message.content.startsWith("d!")) {
-    //     processCommand(message)
-    // }
 
     if (prefix == 'd!' && message.author.id === "605053140466794498") {
         // processCmd(message)

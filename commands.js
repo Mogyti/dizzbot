@@ -53,16 +53,6 @@ function say(message, args) {
 
 // Main function that implement all other functions
 function processCommand(message) {
-    // process reaction on message
-    if (message.author.id === "224258714037780480") {
-        message.react("👍")
-
-        message.guild.emojis.forEach(custEmo => {
-            console.log("Reacting with custom emojis: ${custEmo.name} + ${custEmo.id}")
-            message.react(custEmo)
-        });
-    }
-
     // let args = message.content.substring(2).split(" ")
     let fullCommand = message.content.substr(2) // Remove Prefix
     let splitCommand = fullCommand.split(" ") // Split message with space
