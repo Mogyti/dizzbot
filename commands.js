@@ -95,8 +95,8 @@ function processCommand(message) {
             case "sf":
                 sf(message, args)
                 break
-            // case "dizz":
-            //     dizz(message, args)
+            case "dizz":
+                dizz(message, args)
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
                 message.channel.send("Unknown command. Use d!help for more information.")
