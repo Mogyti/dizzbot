@@ -42,11 +42,10 @@ function cube(message, args) {
 
 function sf(message, args) {
     if (args.length == 0) {
-        let arr = ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "17* ez", "22* ez", "Đập mãi éo 20*", "Lên lên xuống xuống"]
-    } else {
-        message.channel.send("Ya dun need to input anything bruh?")
-        return
+        args = null
     }
+
+    args = args || ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "17* ez", "22* ez", "Đập mãi éo 20*", "Lên lên xuống xuống"]
 
     message.channel.send("<@325278460438380554> said: " + arr[Math.floor(Math.random() * arr.length)])
 }
