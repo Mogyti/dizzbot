@@ -1,0 +1,28 @@
+{
+  "name": "dizzbot",
+  "version": "1.0.0",
+  "description": "- Fun think for Guild",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --inspect bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mogyti/dizzbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mogyti/dizzbot/issues"
+  },
+  "homepage": "https://github.com/Mogyti/dizzbot#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "node-opus": "^0.3.2",
+    "uws": "^100.0.1"
+  }
+}
