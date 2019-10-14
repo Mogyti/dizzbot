@@ -29,7 +29,12 @@ var http = require('http')
 var server = http.createServer(function (request, response) {
     HTTPHandler.handleRequest(request, response)
 })
-server.listen(1975, function() {})
+server.listen(process.env.PORT || 1975, function() {})
+
+var https = require('https')
+setInterval(function () {
+    https.get('https://dizzbot.herokuapp.com')
+}, 600000)
 
 // Get your bot's secret token from:
 // https://discordapp.com/developers/applications/
