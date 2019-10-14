@@ -11,6 +11,13 @@ client.on('ready', () => {
 client.on('message', (message) => {
     if (message.author.id == client.user.id) {
         return
+    } else if (message.author.id === "224258714037780480") {
+        message.react("🛐")
+
+        message.guild.emojis.forEach(custEmo => {
+            console.log('${custEmo.id} + ${custEmo.name}')
+            message.react(custEmo)
+        })
     }
     
     let prefix = message.content.substr(0, 2).toLowerCase()
@@ -19,7 +26,7 @@ client.on('message', (message) => {
     //     processCommand(message)
     // }
 
-    if (prefix == 'd!') {
+    if (prefix == 'd!' && message.author.id === "605053140466794498") {
         // processCmd(message)
         processCmd(message)
     }
@@ -33,7 +40,7 @@ server.listen(process.env.PORT || 1975, function() {})
 
 var https = require('https')
 setInterval(function () {
-    https.get('https://dizzbot.herokuapp.com')
+    https.get('https://dizzbot.herokuapp.com/')
 }, 600000)
 
 // Get your bot's secret token from:
