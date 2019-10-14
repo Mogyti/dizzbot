@@ -9,8 +9,8 @@ function help(message, args) {
         + "Available commands: \n"
         + " - help: Show this message.\n"
         + " - say: Say something.\n"
-        + " - cube: Get luck from \"Linh vật\" while cubing"
-        + " - sf: Get luck from \"Linh vật\" while starforcing")
+        + " - cube: Get luck from \"Linh vật\" while cubing.\n"
+        + " - sf: Get luck from \"Linh vật\" while starforcing.")
 }
 
 function cube(message, args) {
@@ -37,7 +37,7 @@ function cube(message, args) {
     }
 
     // args = args || ["Tier up", "18%", "21%", "23%", "24%", "27%", "30%", "33%", "36%", "39%", "Éo độ"]
-    message.channel.send("<@325278460438380554> said: " + arr[Math.floor(Math.random() * arr.length)])
+    message.channel.send("É said: " + arr[Math.floor(Math.random() * arr.length)])
 }
 
 function sf(message, args) {
@@ -47,13 +47,13 @@ function sf(message, args) {
 
     args = args || ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "17* ez", "22* ez", "Đập mãi éo 20*", "Lên lên xuống xuống"]
 
-    message.channel.send("<@325278460438380554> said: " + args[Math.floor(Math.random() * args.length)])
+    message.channel.send("É said: " + args[Math.floor(Math.random() * args.length)])
 }
 
 function say(message, args) {
     const content = args.join(' ')
     if (content.indexOf("dm") !== -1 || content.indexOf("dit me") !== -1) {
-        message.channel.send("Dizz <@325278460438380554>")
+        message.channel.send("Dizz É")
     } else {
         message.channel.send(content)
     }
@@ -116,8 +116,8 @@ function dizz(message, args) {
     }
 
     args = args || [
-        "Dizz <@325278460438380554>",
-        "Trời đất dung hoa, vạn vật sinh sôi, ngồi dizz <@325278460438380554> liên hồi, từ từ hút luck"
+        "Dizz É",
+        "Trời đất dung hoa, vạn vật sinh sôi, ngồi dizz É liên hồi, từ từ hút luck"
     ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
     message.delete() 
@@ -151,7 +151,7 @@ function truanayangi(message, args) {
     if (args.length == 0) {
         args = null
     }
-    args = args || ["Cơm gà", "Phở cuốn", "Bún", "Cơm sườn"]
+    args = args || ["Cơm gà", "Phở cuốn", "Bún", "Cơm sườn", "Cơm niêu"]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
@@ -161,7 +161,7 @@ function reactMessage(message) {
     }
 
     message.guild.emojis.forEach(emoji => {
-        console.log(emoji.id + "" + emoji.name)
+        console.log(emoji.id + " " + emoji.name)
         message.react(emoji)
     });
 }
