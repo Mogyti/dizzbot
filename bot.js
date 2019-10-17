@@ -8,6 +8,7 @@ var arrEmoId = []
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
     // client.user.setActivity("d!help", {type: "WATCHING"})
+    client.user.setActivity("d!help || shuffling dizz array :-w")
 })
 
 client.on('message', (message) => {

@@ -74,12 +74,25 @@ function processCommand(message) {
     // Testing react
     // reactMessage(message)
 
+
+    // Testing purpose
+    if (message.channel.id == "631401465235111937" && process.env.BOT_TEST != "true") {
+        return
+    } else if (message.channel.id != "631401465235111937" && process.env.BOT_TEST == "true") {
+        return
+    }
+
     // let args = message.content.substring(2).split(" ")
     if (message.content.substr(0, 2) === "d!") {
         let fullCommand = message.content.substr(2) // Remove Prefix
         let splitCommand = fullCommand.split(" ") // Split message with space
         let primaryCommand = splitCommand[0] // The first word is the command
         let args = splitCommand.slice(1)
+
+        if (!splitCommand.length) {
+            message.channel.send("Incorrect form of command. d!help for more information.")
+            return
+        }
     
         console.log("Command received: " + primaryCommand)
         console.log("Arguments: " + args)
