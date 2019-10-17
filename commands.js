@@ -10,7 +10,9 @@ function help(message, args) {
         + " - help: Show this message.\n"
         + " - say: Say something.\n"
         + " - cube: Get luck from \"Linh vật\" while cubing.\n"
-        + " - sf: Get luck from \"Linh vật\" while starforcing.")
+        + " - sf: Get luck from \"Linh vật\" while starforcing.\n"
+        + " - dizz: Dizz É :hoho: \n"
+        + " - drop: Test your luck before bossing")
 }
 
 function cube(message, args) {
@@ -24,13 +26,13 @@ function cube(message, args) {
 
     let arr = null
     if (args == "wse") {
-        arr = ["Éo độ", "Tier up", "Đập mãi éo lên", "39%", "33%", "23%", "%IED", "%Boss Damage"]
+        arr = ["Éo độ", "Tier up", "Éo độ", "Đập mãi éo lên", "Éo độ", "39%", "Éo độ", "33%", "Éo độ", "23%", "Éo độ", "%IED", "Éo độ", "%Boss Damage"]
     } else if (args == "accessories") {
-        arr = ["Éo độ", "Tier up", "Đập mãi éo lên", "Meso obtained", "Item drop rate", "30%"]
+        arr = ["Éo độ", "Tier up", "Éo độ", "Đập mãi éo lên", "Éo độ", "Meso obtained", "Éo độ", "Item drop rate", "Éo độ", "30%"]
     } else if (args == "gloves") {
-        arr = ["Éo độ", "Tier up", "Đập mãi éo lên", "16% crit damage", "8% crit damage", "Decent Sharp Eyes + 2 line crit damage"]
+        arr = ["Éo độ", "Tier up", "Éo độ", "Đập mãi éo lên", "Éo độ", "16% crit damage", "Éo độ", "8% crit damage", "Éo độ", "Decent Sharp Eyes + 2 line crit damage"]
     } else if (args == "others") {
-        arr = ["Éo độ", "Tier up", "Đập mãi éo lên", "39%", "33%", "30%", "27%", "24%", "23%", "Éo ra gì"]
+        arr = ["Éo độ", "Tier up", "Éo độ", "Đập mãi éo lên", "Éo độ", "39%", "Éo độ", "33%", "Éo độ", "30%", "Éo độ", "27%", "Éo độ", "24%", "Éo độ", "23%", "Éo ra gì"]
     } else {
         message.channel.send("Incorrect equipment type. Please input \"wse,\" \"accessories,\" \"gloves,\" or \"others\"")
         return
@@ -45,7 +47,7 @@ function sf(message, args) {
         args = null
     }
 
-    args = args || ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "17* ez", "22* ez", "Đập mãi éo 20*", "Lên lên xuống xuống"]
+    args = args || ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "Boom đồ", "17* ez", "Boom đồ", "22* ez", "Đập mãi éo 20*", "Éo độ", "Lên lên xuống xuống", "Éo độ"]
 
     message.channel.send("É said: " + args[Math.floor(Math.random() * args.length)])
 }
@@ -59,6 +61,15 @@ function say(message, args) {
     }
 
     message.delete()
+}
+
+function drop(message, args) {
+    if (args.length == 0) {
+        args = null
+    }
+    args = args || ["Lênnnn, max droppp", "Đoán xem :chiu:", "Thành thật mà nói thì: Không có gì :hoho:", "Xin chúc mừng, bạn đã quay vào ô **Nerf rate**", "Không nói nhiều: Móm",
+                    "Chắc nay nó rớt á :khinh:", ":hoho:", "Nhưng mà tao có trái tim, còn may KHÔNG có gì :phecan:"]
+    message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
 // Main function that implement all other functions
@@ -96,6 +107,9 @@ function processCommand(message) {
                 break
             case "dizz":
                 dizz(message, args)
+                break
+            case "drop":
+                drop(message, args)
                 break
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
