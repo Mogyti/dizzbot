@@ -63,12 +63,9 @@ function say(message, args) {
     message.delete()
 }
 
-function drop(message, args) {
-    if (args.length == 0) {
-        args = null
-    }
-    args = args || ["Lênnnn, max droppp", "Đoán xem :chiu:", "Thành thật mà nói thì: Không có gì :hoho:", "Xin chúc mừng, bạn đã quay vào ô **Nerf rate**", "Không nói nhiều: Móm",
-                    "Chắc nay nó rớt á :khinh:", ":hoho:", "Nhưng mà tao có trái tim, còn may KHÔNG có gì :phecan:"]
+function drop(message) {
+    let args = ["Lênnnn, max droppp", "Đoán xem :chiu:", "Thành thật mà nói thì: Không có gì :hoho:", "Xin chúc mừng, bạn đã quay vào ô **Nerf rate**", "Không nói nhiều: Móm",
+                    "Chắc nay nó rớt á :khinh:", ":hoho:", "Nhưng mà tao có trái tim, còn may KHÔNG có gì :phecan:" ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
@@ -106,10 +103,10 @@ function processCommand(message) {
                 sf(message, args)
                 break
             case "dizz":
-                dizz(message, args)
+                dizz(message)
                 break
             case "drop":
-                drop(message, args)
+                drop(message)
                 break
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
@@ -122,16 +119,14 @@ function processCommand(message) {
 // Function in consider
 let antiTable = {}
 
-function dizz(message, args) {
+function dizz(message) {
     if (!message || message.author.id === "325278460438380554") return
-    
-    if (args.length == 0) {
-        args = null
-    }
 
-    args = args || [
+    let args = [
         "Dizz É",
-        "Trời đất dung hoa, vạn vật sinh sôi, ngồi dizz É liên hồi, từ từ hút luck"
+        "Trời đất dung hoa, vạn vật sinh sôi, ngồi dizz É liên hồi, từ từ hút luck",
+        "function getLuck(EsBabie) => return null",
+        "sudo rm -rf /home/guild/members/É" 
     ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
     message.delete() 
