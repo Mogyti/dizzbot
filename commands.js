@@ -64,8 +64,9 @@ function say(message, args) {
 }
 
 function drop(message) {
-    let args = ["Lênnnn, max droppp", "Đoán xem :chiu:", "Thành thật mà nói thì: Không có gì :hoho:", "Xin chúc mừng, bạn đã quay vào ô **Nerf rate**", "Không nói nhiều: Móm",
-                    "Chắc nay nó rớt á :khinh:", ":hoho:", "Nhưng mà tao có trái tim, còn may KHÔNG có gì :phecan:" ]
+    let args = ["Lênnnn, max droppp", "Đoán xem <:chiu:588005258058885505>", "Thành thật mà nói thì: Không có gì <:hoho:567974873956220928>", 
+                    "Xin chúc mừng, bạn đã quay vào ô **Nerf rate**", "Không nói nhiều: Móm",
+                    "Chắc nay nó rớt á <:khinh:535335174427115521>", "<:hoho:567974873956220928>", "Nhưng mà tao có trái tim, còn may KHÔNG có gì <:phecan:537477148873588749>" ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
@@ -124,6 +125,9 @@ function processCommand(message) {
             case "emo":
                 getListEmoji(message)
                 break
+            case "emoid":
+                getEmoId(message, args)
+                return
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
                 message.channel.send("Unknown command. Use d!help for more information.")
@@ -197,6 +201,23 @@ function getListEmoji(message) {
     })
     message.channel.send("Done importing emojis of current server, check in console log")
     message.delete()
+}
+
+function getEmoId(message, args) {
+    if (!args.length) {
+        message.channel.send("Incorrect argument. Use d!emoid {emo name} to get its id")
+        return
+    } else if (args.length > 1) {
+        message.channel.send("This function is supported 1 argument atm. Multiple arguments look up will be added in the future.")
+        return
+    }
+
+    message.guild.emojis.forEach(custEmo => {
+        if (custEmo.name == args) {
+            message.channel.send("The id of " + custEmo.name + " is: " + custEmo.id)
+            return
+        }
+    })
 }
 
 module.exports = processCommand
