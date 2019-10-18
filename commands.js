@@ -64,7 +64,7 @@ function say(message, args) {
 }
 
 function drop(message) {
-    let args = ["Lênnnn, max droppp", "Đoán xem <:chiu:588005258058885505>", "Thành thật mà nói thì: Không có gì <:hoho:567974873956220928>", 
+    let args = ["Lênnnn, max droppp", "Đoán xem <:chiu:588005258068885505>", "Thành thật mà nói thì: Không có gì <:hoho:567974873956220928>", 
                     "Xin chúc mừng, bạn đã quay vào ô **Nerf rate**", "Không nói nhiều: Móm",
                     "Chắc nay nó rớt á <:khinh:535335174427115521>", "<:hoho:567974873956220928>", "Nhưng mà tao có trái tim, còn may KHÔNG có gì <:phecan:537477148873588749>" ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
