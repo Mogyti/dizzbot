@@ -83,7 +83,7 @@ function processCommand(message) {
     }
 
     // let args = message.content.substring(2).split(" ")
-    if (message.content.substr(0, 2) === "d!") {
+    if (message.content.substr(0, 2).toLowerCase() === "d!") {
         let fullCommand = message.content.substr(2) // Remove Prefix
         let splitCommand = fullCommand.split(" ") // Split message with space
         let primaryCommand = splitCommand[0] // The first word is the command
@@ -120,6 +120,9 @@ function processCommand(message) {
                 break
             case "drop":
                 drop(message)
+                break
+            case "emo":
+                getListEmoji(message)
                 break
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
@@ -188,5 +191,12 @@ function reactMessage(message) {
     });
 }
 
+function getListEmoji(message) {
+    message.guild.emojis.forEach(custEmo => {
+        console.log(custEmo.name + " " + custEmo.id)
+    })
+    message.channel.send("Done importing emojis of current server, check in console log")
+    message.delete()
+}
 
 module.exports = processCommand
