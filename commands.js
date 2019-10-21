@@ -66,7 +66,9 @@ function say(message, args) {
 function drop(message) {
     let args = ["Lênnnn, max droppp", "Đoán xem <:chiu:588005258068885505>", "Thành thật mà nói thì: Không có gì <:hoho:567974873956220928>", 
                     "Xin chúc mừng, bạn đã quay vào ô **Nerf rate**", "Không nói nhiều: Móm",
-                    "Chắc nay nó rớt á <:khinh:535335174427115521>", "<:hoho:567974873956220928>", "Nhưng mà tao có trái tim, còn may KHÔNG có gì <:phecan:537477148873588749>" ]
+                    "Chắc nay nó rớt á <:khinh:535335174427115521>", "<:hoho:567974873956220928>", "Nhưng mà tao có trái tim, còn mày KHÔNG có gì <:phecan:537477148873588749>",
+                    "Không có gì là không thể, kể cả việc bạn đi boss và k drop cái gì <:aotuong:537477148575924226>", "<:oitroioi:625520877143851041> max drop rate mà không có gì hết trơn",
+                    "<:chomp:535347215925903361> <:chomp:535347215925903361> <:chomp:535347215925903361>", "Mơ đi, mơ nữa đi <:aotuong:537477148575924226> <:cuoi:535334346773757952>" ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
@@ -144,9 +146,10 @@ function dizz(message) {
 
     let args = [
         "Dizz É",
-        "Trời đất dung hoa, vạn vật sinh sôi, ngồi dizz É liên hồi, từ từ hút luck",
+        "Trời đất dung hoa, vạn vật sinh sôi, dizz É liên hồi, từ từ hút luck",
         "function getLuck(EsBabie) => return null",
-        "sudo rm -rf /home/guild/members/É" 
+        "sudo rm -rf /home/guild/members/É",
+        "Sau mà đi khám nhớ né bệnh viện É làm ra, không là thế giới sẽ mất đi 1 nhân tài <:khinh:535335174427115521>" 
     ]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
     message.delete() 
