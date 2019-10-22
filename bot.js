@@ -15,7 +15,7 @@ client.on('message', (message) => {
     if (message.author.id == client.user.id || message.author.id === "605053140466794498") {
         return
     } else if (message.content.includes(client.user.toString())) {
-        let arr = message.split(" ")
+        let arr = message.content.split(" ")
         let arrSend = []
         if (arr.length == 1) {
             tagReturn(message)
