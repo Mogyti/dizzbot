@@ -26,9 +26,11 @@ client.on('message', (message) => {
             arrSend = ["Cuộc sống giống như điệu nhảy Tango, tao lùi 1 bước thì mày chỉ được tiến 1 bước thôi, đừng có mà nhờn "]
         } else if (message.content.toLowerCase().includes("?")) {
             arrSend = ["Toàn hỏi thừa thôi", "Mày nói xem lý do gì tao phải trả lời câu hỏi của mày? ", "Hỏi cái gì? Thích ăn đòn không? "]
-        } else if (message.content.toLowerCase().includes("giao") || message.author.id === "224258714037780480") {
+        } else if ((message.content.toLowerCase().includes("giao") || message.content.toLowerCase().includes("thịt")) && message.author.id === "224258714037780480") {
             arrSend = ["Anh cứ để đó cho em, riêng quả này em chấp 1 mắt <:pepega:636040268893650963>", "Nó hành anh mất cân, em trả lại nó ngần đấy tấn <:giotaylen:535489803815223297>",
                         "Thôi ông tự đi mà giải quyết đi, nhà tôi bao việc <:khinh:535335174427115521>"]
+        } else if (message.content.toLowerCase().includes("mèo") && message.content.toLowerCase().includes("mua")) {
+            arrSend = ["Ông nói xem vì sao tôi lại phải trả lời ông? ", "Đi hỏi Robert Chen nhé ", "Mèo anh Chen, sang đấy mà hỏi "]
         } else {
             tagReturn(message)
             return
@@ -51,7 +53,7 @@ setInterval(function () {
 }, 600000)
 
 function tagReturn(message) {
-    let args = ["Tag gì tao?", "?", "Gọi gì bố đấy có bố đây", "<:khinh:535335174427115521>"]
+    let args = ["Cái gì?", "?", "<:khinh:535335174427115521>"]
 
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
