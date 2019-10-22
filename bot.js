@@ -19,6 +19,7 @@ client.on('message', (message) => {
         let arrSend = []
         if (arr.length == 1) {
             tagReturn(message)
+            return
         } else if (message.content.toLowerCase().includes("dizz")) {
             arrSend = ["Hơi láo rồi đấy nhé ", "Nhân chi sơ, tính cà khịa à? ", "Dizz lại "]
         } else if (message.content.toLowerCase().includes("đm") || message.content.toLowerCase().includes("dm")) {
@@ -28,9 +29,9 @@ client.on('message', (message) => {
         } else if (message.content.toLowerCase().includes("láo")) {
             arrSend = ["Cuộc sống giống như điệu nhảy Tango, tao lùi 1 bước thì mày chỉ được tiến 1 bước thôi, đừng có mà nhờn "]
         } else if (message.content.toLowerCase().includes("?")) {
-            arrSend = ["Toàn hỏi thừa thôi", "Mày nói xem lý do gì tao phải trả lời câu hỏi của mày? "]
+            arrSend = ["Toàn hỏi thừa thôi", "Mày nói xem lý do gì tao phải trả lời câu hỏi của mày? ", "Hỏi cái gì? Thích ăn đòn không? "]
         }
-        message.channel.send(message.author.toString() + arrSend[Math.floor(Math.random() * arrSend.length)])
+        message.channel.send(arrSend[Math.floor(Math.random() * arrSend.length)] + " " + message.author.toString())
     } else {
         processCmd(message)
     }
