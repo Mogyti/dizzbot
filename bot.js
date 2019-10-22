@@ -15,12 +15,8 @@ client.on('message', (message) => {
     if (message.author.id == client.user.id || message.author.id === "605053140466794498") {
         return
     } else if (message.content.includes(client.user.toString())) {
-        let arr = message.content.split(" ")
         let arrSend = []
-        if (arr.length == 1) {
-            tagReturn(message)
-            return
-        } else if (message.content.toLowerCase().includes("dizz")) {
+        if (message.content.toLowerCase().includes("dizz")) {
             arrSend = ["Hơi láo rồi đấy nhé ", "Nhân chi sơ, tính cà khịa à? ", "Dizz lại "]
         } else if (message.content.toLowerCase().includes("đm") || message.content.toLowerCase().includes("dm")) {
             arrSend = ["Chửi bậy ít thôi, nghiệp quật đấy ", "Ngon nhào dzô, anh em đổ tí máu "]
@@ -30,6 +26,12 @@ client.on('message', (message) => {
             arrSend = ["Cuộc sống giống như điệu nhảy Tango, tao lùi 1 bước thì mày chỉ được tiến 1 bước thôi, đừng có mà nhờn "]
         } else if (message.content.toLowerCase().includes("?")) {
             arrSend = ["Toàn hỏi thừa thôi", "Mày nói xem lý do gì tao phải trả lời câu hỏi của mày? ", "Hỏi cái gì? Thích ăn đòn không? "]
+        } else if (message.content.toLowerCase().includes("giao") || message.author.id === "224258714037780480") {
+            arrSend = ["Anh cứ để đó cho em, riêng quả này em chấp 1 mắt <:pepega:636040268893650963>", "Nó hành anh mất cân, em trả lại nó ngần đấy tấn <:giotaylen:535489803815223297>",
+                        "Thôi ông tự đi mà giải quyết đi, nhà tôi bao việc <:khinh:535335174427115521>"]
+        } else {
+            tagReturn(message)
+            return
         }
         message.channel.send(arrSend[Math.floor(Math.random() * arrSend.length)] + " " + message.author.toString())
     } else {
