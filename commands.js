@@ -42,12 +42,8 @@ function cube(message, args) {
     message.channel.send("É said: " + arr[Math.floor(Math.random() * arr.length)])
 }
 
-function sf(message, args) {
-    if (args.length == 0) {
-        args = null
-    }
-
-    args = args || ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "Boom đồ", "17* ez", "Boom đồ", "22* ez", "Đập mãi éo 20*", "Éo độ", "Lên lên xuống xuống", "Éo độ"]
+function sf(message) {
+    let args = ["Éo độ", "Boom đồ", "Đập mãi éo 15*", "Boom đồ", "17* ez", "Boom đồ", "22* ez", "Đập mãi éo 20*", "Éo độ", "Lên lên xuống xuống", "Éo độ"]
 
     message.channel.send("É said: " + args[Math.floor(Math.random() * args.length)])
 }
@@ -116,7 +112,7 @@ function processCommand(message) {
                 truanayangi(message, args)
                 break
             case "sf":
-                sf(message, args)
+                sf(message)
                 break
             case "dizz":
                 dizz(message)
