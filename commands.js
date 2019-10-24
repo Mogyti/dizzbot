@@ -12,7 +12,7 @@ function help(message, args) {
         + " - cube: Get luck from \"Linh vật\" while cubing.\n"
         + " - sf: Get luck from \"Linh vật\" while starforcing.\n"
         + " - dizz: Dizz É <:hoho:567974873956220928> .\n"
-        + " - drop: Test your luck before bossing."
+        + " - drop: Test your luck before bossing. \n"
         + " - dtotem: Special for Dark Totem Event period only <:pepega:636040268893650963> .")
 }
 
@@ -73,7 +73,7 @@ function dtotem(message) {
     let args = ["+1", "Để mai hết hạn rồi hãy mở <:pepega:636040268893650963>", "Mở làm gì, không ra đâu <:cuoi:535334346773757952>", "Sẵn sàng chưa???....Một, hai, ba: **Đếu có gì** <:phecan:537477148873588749>",
                 "Móm, móm nữa, móm mãi, móm thâm niên <:pepega:636040268893650963>", "Đời không cấm bạn mơ, nhưng được hay không lại phụ thuộc vào rờ nờ gờ <:pepega:636040268893650963>",
                 "Cuộc sống không lường trước điều gì <:hoho:567974873956220928>", "Bố thí cho cái copper là may rồi á <:khinh:535335174427115521>",
-                "Sai stat <:cuoi:535334346773757952>"]
+                "Sai stat <:cuoi:535334346773757952>", "Thèm không cho mà không thèm cũng không cho <:khinh:535335174427115521>"]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
