@@ -11,8 +11,9 @@ function help(message, args) {
         + " - say: Say something.\n"
         + " - cube: Get luck from \"Linh vật\" while cubing.\n"
         + " - sf: Get luck from \"Linh vật\" while starforcing.\n"
-        + " - dizz: Dizz É :hoho: \n"
-        + " - drop: Test your luck before bossing")
+        + " - dizz: Dizz É <:hoho:567974873956220928> .\n"
+        + " - drop: Test your luck before bossing."
+        + " - dtotem: Special for Dark Totem Event period only <:pepega:636040268893650963> .")
 }
 
 function cube(message, args) {
@@ -65,6 +66,14 @@ function drop(message) {
                     "Chắc nay nó rớt á <:khinh:535335174427115521>", "<:hoho:567974873956220928>", "Nhưng mà tao có trái tim, còn mày KHÔNG có gì <:phecan:537477148873588749>",
                     "Không có gì là không thể, kể cả việc bạn đi boss và k drop cái gì <:aotuong:537477148575924226>", "<:oitroioi:625520877143851041> max drop rate mà không có gì hết trơn",
                     "<:chomp:535347215925903361> <:chomp:535347215925903361> <:chomp:535347215925903361>", "Mơ đi, mơ nữa đi <:aotuong:537477148575924226> <:cuoi:535334346773757952>" ]
+    message.channel.send(args[Math.floor(Math.random() * args.length)])
+}
+
+function dtotem(message) {
+    let args = ["+1", "Để mai hết hạn rồi hãy mở <:pepega:636040268893650963>", "Mở làm gì, không ra đâu <:cuoi:535334346773757952>", "Sẵn sàng chưa???....Một, hai, ba: **Đếu có gì** <:phecan:537477148873588749>",
+                "Móm, móm nữa, móm mãi, móm thâm niên <:pepega:636040268893650963>", "Đời không cấm bạn mơ, nhưng được hay không lại phụ thuộc vào rờ nờ gờ <:pepega:636040268893650963>",
+                "Cuộc sống không lường trước điều gì <:hoho:567974873956220928>", "Bố thí cho cái copper là may rồi á <:khinh:535335174427115521>",
+                "Sai stat <:cuoi:535334346773757952>"]
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
@@ -125,6 +134,9 @@ function processCommand(message) {
                 break
             case "emoid":
                 getEmoId(message, args)
+                return
+            case "dtotem":
+                dtotem(message)
                 return
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
