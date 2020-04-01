@@ -8,13 +8,14 @@ var arrEmoId = []
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
     // client.user.setActivity("d!help", {type: "WATCHING"})
-    client.user.setActivity("d!help || shuffling dizz array :-w")
+    // client.user.setActivity("d!help || shuffling dizz array :-w")
+    client.user.setActivity("Rap dizz - g!help for more infomation", {type: "LISTENING"})
 })
 
 client.on('message', (message) => {
-    if (message.author.id == client.user.id || message.author.id === "605053140466794498") {
+    if (message.author.id == client.user.id) {
         return
-    } else if (message.content.includes(client.user.toString())) {
+    } else if (message.mentions.users.find(user => user.id === client.user.id) === client.user) {
         let arrSend = []
         if (message.content.toLowerCase().includes("dizz")) {
             arrSend = ["Hơi láo rồi đấy nhé ", "Nhân chi sơ, tính cà khịa à? ", "Dizz lại "]

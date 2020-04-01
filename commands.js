@@ -5,15 +5,13 @@ const client = new Discord.Client()
 
 //Function
 function help(message, args) {
-    message.channel.send("Hi. I'm Dizz Bot.\n" 
+    message.channel.send("Hi. I'm Gin's Slave. My prefix is \"g!\" \n" 
         + "Available commands: \n"
         + " - help: Show this message.\n"
         + " - say: Say something.\n"
         + " - cube: Get luck from \"Linh vật\" while cubing.\n"
         + " - sf: Get luck from \"Linh vật\" while starforcing.\n"
-        + " - dizz: Dizz É <:hoho:567974873956220928> .\n"
-        + " - drop: Test your luck before bossing. \n"
-        + " - dtotem: Special for Dark Totem Event period only <:pepega:636040268893650963> .")
+        + " - drop: Test your luck before bossing. \n")
 }
 
 function cube(message, args) {
@@ -69,13 +67,13 @@ function drop(message) {
     message.channel.send(args[Math.floor(Math.random() * args.length)])
 }
 
-function dtotem(message) {
-    let args = ["+1", "Để mai hết hạn rồi hãy mở <:pepega:636040268893650963>", "Mở làm gì, không ra đâu <:cuoi:535334346773757952>", "Sẵn sàng chưa???....Một, hai, ba: **Đếu có gì** <:phecan:537477148873588749>",
-                "Móm, móm nữa, móm mãi, móm thâm niên <:pepega:636040268893650963>", "Đời không cấm bạn mơ, nhưng được hay không lại phụ thuộc vào rờ nờ gờ <:pepega:636040268893650963>",
-                "Cuộc sống không lường trước điều gì <:hoho:567974873956220928>", "Bố thí cho cái copper là may rồi á <:khinh:535335174427115521>",
-                "Sai stat <:cuoi:535334346773757952>", "Thèm không cho mà không thèm cũng không cho <:khinh:535335174427115521>"]
-    message.channel.send(args[Math.floor(Math.random() * args.length)])
-}
+// function dtotem(message) {
+//     let args = ["+1", "Để mai hết hạn rồi hãy mở <:pepega:636040268893650963>", "Mở làm gì, không ra đâu <:cuoi:535334346773757952>", "Sẵn sàng chưa???....Một, hai, ba: **Đếu có gì** <:phecan:537477148873588749>",
+//                 "Móm, móm nữa, móm mãi, móm thâm niên <:pepega:636040268893650963>", "Đời không cấm bạn mơ, nhưng được hay không lại phụ thuộc vào rờ nờ gờ <:pepega:636040268893650963>",
+//                 "Cuộc sống không lường trước điều gì <:hoho:567974873956220928>", "Bố thí cho cái copper là may rồi á <:khinh:535335174427115521>",
+//                 "Sai stat <:cuoi:535334346773757952>", "Thèm không cho mà không thèm cũng không cho <:khinh:535335174427115521>"]
+//     message.channel.send(args[Math.floor(Math.random() * args.length)])
+// }
 
 // Main function that implement all other functions
 function processCommand(message) {
@@ -91,7 +89,7 @@ function processCommand(message) {
     }
 
     // let args = message.content.substring(2).split(" ")
-    if (message.content.substr(0, 2).toLowerCase() === "d!") {
+    if (message.content.substr(0, 2).toLowerCase() === "g!") {
         let fullCommand = message.content.substr(2) // Remove Prefix
         let splitCommand = fullCommand.split(" ") // Split message with space
         let primaryCommand = splitCommand[0] // The first word is the command
@@ -140,7 +138,7 @@ function processCommand(message) {
                 return
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
-                message.channel.send("Unknown command. Use d!help for more information.")
+                message.channel.send("Unknown command. Use g!help for more information.")
         }
     }
     
@@ -149,19 +147,19 @@ function processCommand(message) {
 // Function in consider
 let antiTable = {}
 
-function dizz(message) {
-    if (!message || message.author.id === "325278460438380554") return
+// function dizz(message) {
+//     if (!message || message.author.id === "325278460438380554") return
 
-    let args = [
-        "Dizz É",
-        "Trời đất dung hoa, vạn vật sinh sôi, dizz É liên hồi, từ từ hút luck",
-        "function getLuck(EsBabie) => return null",
-        "sudo rm -rf /home/guild/members/É",
-        "Sau mà đi khám nhớ né bệnh viện É làm ra, không là thế giới sẽ mất đi 1 nhân tài <:khinh:535335174427115521>" 
-    ]
-    message.channel.send(args[Math.floor(Math.random() * args.length)])
-    message.delete() 
-}
+//     let args = [
+//         "Dizz É",
+//         "Trời đất dung hoa, vạn vật sinh sôi, dizz É liên hồi, từ từ hút luck",
+//         "function getLuck(EsBabie) => return null",
+//         "sudo rm -rf /home/guild/members/É",
+//         "Sau mà đi khám nhớ né bệnh viện É làm ra, không là thế giới sẽ mất đi 1 nhân tài <:khinh:535335174427115521>" 
+//     ]
+//     message.channel.send(args[Math.floor(Math.random() * args.length)])
+//     message.delete() 
+// }
 
 function antiChat(message) {
     if (!message) return
