@@ -9,7 +9,7 @@ client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
     // client.user.setActivity("d!help", {type: "WATCHING"})
     // client.user.setActivity("d!help || shuffling dizz array :-w")
-    client.user.setActivity("Rap dizz - g!help for more infomation", {type: "LISTENING"})
+    client.user.setActivity("Rap dizz - s!help for more infomation", {type: "LISTENING"})
 })
 
 client.on('message', (message) => {

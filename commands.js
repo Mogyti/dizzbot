@@ -239,14 +239,29 @@ function getEmoId(message, args) {
 
 function roleAssign(message, args) {
     if (!message) return
+    console.log(args[0] + args[1])
+
     if (args.length == 0) {
         message.channel.send("Assign wut?")
         return
+    } else {
+        argsNew = args.slice(1)
     }
     var member = message.mentions.members.first()
-    var role = message.member.guild.roles.find(role => role.name === args[1])
 
-    member.addRoles(role)
+    if (argsNew.length == 1) {
+        var role = message.member.guild.roles.find(role => role.name === argsNew[0])
+        member.addRoles(role)
+    } else {
+        var roleList = []
+        argsNew.forEach(arg => {
+            roleList.push(arg)
+        })
+        member.addRoles(roleList)
+    }
+    message.react("👌")
+    message.channel.send("Done!!!")
+
 }
 
 module.exports = processCommand
