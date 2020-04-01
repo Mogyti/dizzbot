@@ -5,7 +5,8 @@ const client = new Discord.Client()
 
 //Function
 function help(message, args) {
-    message.channel.send("Hi. I'm Gin's Slave. My prefix is \"g!\" \n" 
+    message.channel.send("Hi. I'm Gin's Slave. My prefix is \"s!\" \n" 
+        +"For example: s!drop \n"
         + "Available commands: \n"
         + " - help: Show this message.\n"
         + " - cube: Get luck from \"Linh vật\" while cubing.\n"
@@ -93,14 +94,14 @@ function processCommand(message) {
     }
 
     // let args = message.content.substring(2).split(" ")
-    if (message.content.substr(0, 2).toLowerCase() === "g!") {
+    if (message.content.substr(0, 2).toLowerCase() === "s!") {
         let fullCommand = message.content.substr(2) // Remove Prefix
         let splitCommand = fullCommand.split(" ") // Split message with space
         let primaryCommand = splitCommand[0] // The first word is the command
         let args = splitCommand.slice(1)
 
         if (!splitCommand.length) {
-            message.channel.send("Incorrect form of command. d!help for more information.")
+            message.channel.send("Incorrect form of command. s!help for more information.")
             return
         }
     
@@ -231,6 +232,18 @@ function getEmoId(message, args) {
             return
         }
     })
+}
+
+function roleAssign(message, args) {
+    if (!message) return
+    if (args.length == 0) {
+        message.channel.send("Assign wut?")
+        return
+    }
+    var member = message.mentions.members.first()
+    var role = message.member.guild.roles.find(role => role.name === args[1])
+
+    member.addRoles(role)
 }
 
 module.exports = processCommand
