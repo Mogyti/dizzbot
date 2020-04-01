@@ -87,9 +87,9 @@ function processCommand(message) {
 
 
     // Testing purpose
-    if (message.channel.id == "631401465235111937" && process.env.BOT_TEST != "true") {
+    if (message.channel.id == "631350244671750154" && process.env.BOT_TEST != "true") {
         return
-    } else if (message.channel.id != "631401465235111937" && process.env.BOT_TEST == "true") {
+    } else if (message.channel.id != "631350244671750154" && process.env.BOT_TEST == "true") {
         return
     }
 
@@ -256,7 +256,7 @@ function roleAssign(message, args) {
         message.channel.send("Cannot process multiple roles at the same time due to the API deprecation.")
         return
     } else if (argsNew.length == 0) {
-        message.channel.send("What role for ${member.username}?")
+        message.channel.send('What role for ' + member.toString())
         return
     }
     message.react("👌")
