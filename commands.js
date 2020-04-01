@@ -138,12 +138,15 @@ function processCommand(message) {
             case "emoid":
                 getEmoId(message, args)
                 return
-            case "dtotem":
-                dtotem(message)
+            // case "dtotem":
+            //     dtotem(message)
+            //     return
+            case "assign":
+                roleAssign(message, args)
                 return
             default:
                 // unknownCommand(message, [cmd].concat(args)) 
-                message.channel.send("Unknown command. Use g!help for more information.")
+                message.channel.send("Unknown command. Use s!help for more information.")
         }
     }
     
