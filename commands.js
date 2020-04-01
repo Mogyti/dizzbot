@@ -252,12 +252,12 @@ function roleAssign(message, args) {
     if (argsNew.length == 1) {
         var role = message.member.guild.roles.find(role => role.name === argsNew[0])
         member.addRoles(role)
-    } else {
-        var roleList = []
-        argsNew.forEach(arg => {
-            roleList.push(arg)
-        })
-        member.addRoles(roleList)
+    } else if (argsNew.length > 1) {
+        message.channel.send("Cannot process multiple roles at the same time due to the API deprecation.")
+        return
+    } else if (argsNew.length == 0) {
+        message.channel.send("What role for ${member.username}?")
+        return
     }
     message.react("👌")
     message.channel.send("Done!!!")
