@@ -8,7 +8,6 @@ function help(message, args) {
     message.channel.send("Hi. I'm Gin's Slave. My prefix is \"g!\" \n" 
         + "Available commands: \n"
         + " - help: Show this message.\n"
-        + " - say: Say something.\n"
         + " - cube: Get luck from \"Linh vật\" while cubing.\n"
         + " - sf: Get luck from \"Linh vật\" while starforcing.\n"
         + " - drop: Test your luck before bossing. \n")
@@ -48,6 +47,11 @@ function sf(message) {
 }
 
 function say(message, args) {
+    if (!message.author.id === "224258714037780480") {
+        message.channel.send("Tự nói đi, nhờ tôi làm gì")
+        return
+    } 
+
     const content = args.join(' ')
     if (content.indexOf("dm") !== -1 || content.indexOf("dit me") !== -1) {
         message.channel.send("Dizz É")
