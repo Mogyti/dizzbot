@@ -1,4 +1,4 @@
 # Dizz Bot
-- Fun think for Guild
+- Unfinished
 
 Powered by Gince - Credit: Vu Tuan Anh
